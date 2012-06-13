@@ -37,15 +37,15 @@ HelperMacros.h
 struct TestSMP : CppUnit::TestFixture {
 
     // ----
-    // Constructor
+    // PersonConstructor
     // ----
 
     void test_construct_1 () {
         int a1[2] = {1, 2};
         int a2[2] = {2, 1};
         Person Pat = Person(a1, 1);
-        Person Chris  = Person(a1, 2);
-        Person Jordan = Person(a1, 2);
+        Person Chris  = Person(a2, 2);
+        Person Jordan = Person(a2, 2);
         Person Sam = Person(a1, 1);}
 
     void test_construct_2 () {
@@ -53,7 +53,7 @@ struct TestSMP : CppUnit::TestFixture {
         Person Sam = Person(a1, 1);}
 
     // ----
-    // getNumber
+    // Person.getNumber
     // ----
 
     void test_number_1 () {
@@ -81,7 +81,7 @@ struct TestSMP : CppUnit::TestFixture {
         CPPUNIT_ASSERT(n == 1);}
 
     // -----
-    // match
+    // Person.match
     // -----
 
     void test_match_1 () {
@@ -124,7 +124,7 @@ struct TestSMP : CppUnit::TestFixture {
 
 
     // -----
-    // engage
+    // Person.engage
     // -----
 
     void test_engage_1 () {
@@ -163,7 +163,7 @@ struct TestSMP : CppUnit::TestFixture {
         CPPUNIT_ASSERT(Sam.isFree() == false);}
         
     //------
-    //disengage
+    // Person.disengage
     //-------
 
     void test_disengage_1() {
@@ -197,7 +197,59 @@ struct TestSMP : CppUnit::TestFixture {
         CPPUNIT_ASSERT(Sam.isFree() == true);
         CPPUNIT_ASSERT(Sam.getMatch() == 0); }
 
-
+    // ---------------
+    // Man.Constructor 
+    // ---------------
+    
+    
+    void test_ManConstruct_1() {
+       int a1[2] = {1, 2};
+       Man Matt = Man(a1, 1);
+       CPPUNIT_ASSERT(Matt.getMatch() == 0);
+       CPPUNIT_ASSERT(Matt.getNumber() == 1);}
+       
+    void test_ManConstruct_2() {
+       int a2[2] = {2, 1};
+       Man Barak = Man(a2, 2); 
+       CPPUNIT_ASSERT(Barak.isFree() == true);
+       Barak.engage(2);
+       CPPUNIT_ASSERT(Barak.isFree() == false);
+       Barak.disengage();
+       CPPUNIT_ASSERT(Barak.isFree() == true);}
+       
+    void test_ManConstruct_3() {
+      int a2[2] = {2, 1};
+      Man Matt = Man(a2, 1);
+      Person woman = Person(a2, 1);
+      Matt.engage(woman.getNumber());
+      CPPUNIT_ASSERT(Matt.isFree() == false);
+      CPPUNIT_ASSERT(Matt.getMatch() == 1); }
+    
+    // ----------- 
+    // Man.propose
+    // -----------
+    void test_propose_1() {
+       int a1[2] = {1, 2};
+       Man Matt = Man(a1, 1);
+       CPPUNIT_ASSERT(Matt.propose() == 1);
+       CPPUNIT_ASSERT(Matt.propose() == 2);}
+       
+    void test_propose_2() {
+       int a2[2] = {2, 1};
+       Man Matt = Man(a2, 1);
+       CPPUNIT_ASSERT(Matt.propose() == 2);
+       Man Dudeman = Man(a2, 2);
+       CPPUNIT_ASSERT(Dudeman.propose() != 1); }
+       
+//    void test_propose_3() {
+//      int a[] = {1};
+//      Man OtherDudeMan = Man(a, 1);
+//      try {
+//	 OtherDudeMan.propose();
+//         OtherDudeMan.propose();
+//	 CPPUNIT_ASSERT(false);}
+//      catch(){}}
+      
     // -----
     // suite
     // -----
@@ -221,8 +273,18 @@ struct TestSMP : CppUnit::TestFixture {
     CPPUNIT_TEST(test_disengage_1);
     CPPUNIT_TEST(test_disengage_2);
     CPPUNIT_TEST(test_disengage_3);
+    
+    CPPUNIT_TEST(test_ManConstruct_1);
+    CPPUNIT_TEST(test_ManConstruct_2);
+    CPPUNIT_TEST(test_ManConstruct_3);
+    
+    CPPUNIT_TEST(test_propose_1);
+    CPPUNIT_TEST(test_propose_2);
+//    CPPUNIT_TEST(test_propose_3);
+    
     CPPUNIT_TEST_SUITE_END();};
 
+    
 // ----
 // main
 // ----

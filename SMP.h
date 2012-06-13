@@ -1,5 +1,7 @@
 //Person Class
-
+//Man Class Preferences structure----- Manprefs[2,3,1,4] --------fav 2    2nd fav - 3
+//Woman Class Preferences structre-----Womanprefs[2,3,1,4] -----fav 3    2nd fav - 1
+//
 
 class Person{
 
@@ -7,7 +9,7 @@ class Person{
 static const int NO_MATCH = 0;
 
 private: bool is_free; 
-private: int* prefs;   
+protected: int* prefs;   
 private: int number;  // unique for man/woman
 private: int match;  //number of match //  number of woman/man person is matched to
 
@@ -34,16 +36,23 @@ public: void engage(int matchTo) // matches person to matchTo
 public: void disengage() // Haha, I made a funny
 {  
   match = NO_MATCH;
-  is_free = true;
-}};
+  is_free = true;}
+};
+  
+class Man : public Person {
 
-class Man : Person {
+private: int next_woman;
 
-private: int next_Woman;
-
-public: Man(int prefsList[], intnumberOfPerson) 
+public: Man(int prefsList[], int numberOfPerson) 
    : Person(prefsList, numberOfPerson) {
-   next_Woman = 0;
+   next_woman = 0; }
 
 public: int propose() {
-   return next_woman++; }
+   return prefs[next_woman++]; }
+};
+
+
+	
+	
+     
+     
