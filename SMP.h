@@ -72,12 +72,10 @@ class Woman : public Person {
      if(isFree()) {
         engage(numberOfMan);
         return 0;}
-     else
-        if(wants_change_to(numberOfMan)) {
+     else {
+        if(wants_change_to(numberOfMan)) 
 	    match = numberOfMan;
-	    return numberOfMan; }
-	else
-	    return match;
+	return match;}
   }
   
   
