@@ -200,8 +200,6 @@ struct TestSMP : CppUnit::TestFixture {
     // ---------------
     // Man.Constructor 
     // ---------------
-    
-    
     void test_ManConstruct_1() {
        int a1[2] = {1, 2};
        Man Matt = Man(a1, 1);
@@ -249,7 +247,74 @@ struct TestSMP : CppUnit::TestFixture {
 //         OtherDudeMan.propose();
 //	 CPPUNIT_ASSERT(false);}
 //      catch(){}}
-      
+
+    void test_WomanConstruct_1() {
+       int a1[2] = {1, 2};
+       Woman Matt = Woman(a1,2, 1);
+       CPPUNIT_ASSERT(Matt.getMatch() == 0);
+       CPPUNIT_ASSERT(Matt.getNumber() == 1);}
+       
+    void test_WomanConstruct_2() {
+       int a2[2] = {2, 1};
+       Woman Barak = Woman(a2, 2, 2); 
+       CPPUNIT_ASSERT(Barak.isFree() == true);
+       Barak.engage(2);
+       CPPUNIT_ASSERT(Barak.isFree() == false);
+       Barak.disengage();
+       CPPUNIT_ASSERT(Barak.isFree() == true);}
+       
+    void test_WomanConstruct_3() {
+      int a2[2] = {2, 1};
+      Woman Matt = Woman(a2,2, 1);
+      Person woman = Person(a2, 1);
+      Matt.engage(woman.getNumber());
+      CPPUNIT_ASSERT(Matt.isFree() == false);
+      CPPUNIT_ASSERT(Matt.getMatch() == 1); }
+    
+ //woman.wants_to_change   
+    
+    void test_wct_1() {
+       int a1[5] = {1, 2, 3, 4, 5};
+       Woman Drew = Woman(a1,5, 1); 
+       Drew.engage(3);
+       CPPUNIT_ASSERT(Drew.getMatch() == 3);
+       CPPUNIT_ASSERT(Drew.wants_change_to(1));}
+       
+    void test_wct_2() {
+       int a1[5] = {1, 2, 3, 4, 5};
+       Woman Drew = Woman(a1,5, 1); 
+       Drew.engage(3);
+       CPPUNIT_ASSERT(Drew.getMatch() == 3);
+       CPPUNIT_ASSERT(!Drew.wants_change_to(5));}
+       
+   void test_wct_3() {
+       int a1[5] = {1, 2, 3, 4, 5};
+       Woman Drew = Woman(a1,5, 1); 
+       Drew.engage(3);
+       CPPUNIT_ASSERT(Drew.getMatch() == 3);
+       CPPUNIT_ASSERT(!Drew.wants_change_to(3));}
+ 
+ //woman.acceptProposal
+ 
+   void test_acceptProposal_1() {
+       int a1[5] = {3, 2, 4, 1, 5};
+       Woman Drew = Woman(a1,5, 1); 
+       Man Keanu = Man(a1, 1);
+       CPPUNIT_ASSERT(Drew.acceptProposal(1) == 0);}
+       
+   void test_acceptProposal_2() {
+       int a1[5] = {3, 2, 4, 1, 5};
+       Woman Drew = Woman(a1,5, 1); 
+       Drew.engage(1);
+       CPPUNIT_ASSERT(Drew.acceptProposal(2) == 2);}
+       
+    void test_acceptProposal_3() {
+       int a1[5] = {3, 2, 4, 1, 5};
+       Woman Drew = Woman(a1,5, 1); 
+       Drew.engage(3);
+       CPPUNIT_ASSERT(Drew.acceptProposal(2) == 3);}
+   
+
     // -----
     // suite
     // -----
@@ -281,6 +346,14 @@ struct TestSMP : CppUnit::TestFixture {
     CPPUNIT_TEST(test_propose_1);
     CPPUNIT_TEST(test_propose_2);
 //    CPPUNIT_TEST(test_propose_3);
+
+    CPPUNIT_TEST(test_wct_1);
+    CPPUNIT_TEST(test_wct_2);
+    CPPUNIT_TEST(test_wct_3);
+    
+    CPPUNIT_TEST(test_acceptProposal_1);
+    CPPUNIT_TEST(test_acceptProposal_2);
+    CPPUNIT_TEST(test_acceptProposal_3);
     
     CPPUNIT_TEST_SUITE_END();};
 
