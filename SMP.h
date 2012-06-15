@@ -13,6 +13,8 @@ protected: int* prefs;
 private: int number;  // unique for man/woman
 protected: int match;  //number of match //  number of woman/man person is matched to
 
+public: Person() {}
+
 public: Person(int prefsList[], int numberOfPerson) 
 {
 is_free = true;
@@ -41,6 +43,8 @@ public: void disengage() // Haha, I made a funny
   
 class Man : public Person {
 
+public: Man() {}
+
 private: int next_woman;
 
 public: Man(int prefsList[], int numberOfPerson) 
@@ -59,6 +63,7 @@ class Woman : public Person {
   // revPrefs uses the idendification numbers as the indices and their ranks as the cell-values.
   private: int* revPrefs;
   
+  public: Woman() {}
   
   public: Woman(int prefsList[], int length, int numberOfPerson) 
    : Person(prefsList, numberOfPerson) {
