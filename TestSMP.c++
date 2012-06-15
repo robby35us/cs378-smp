@@ -28,7 +28,8 @@ HelperMacros.h
 #include "cppunit/TestFixture.h" // TestFixture
 #include "cppunit/TextTestRunner.h" // TextTestRunner
 
-#include "SMP.h"
+//#include "SMP.h"
+#include "RunSMP.c++"
 
 // -----------
 // TestSMP
@@ -300,20 +301,147 @@ struct TestSMP : CppUnit::TestFixture {
        int a1[5] = {3, 2, 4, 1, 5};
        Woman Drew = Woman(a1,5, 1); 
        Man Keanu = Man(a1, 1);
-       CPPUNIT_ASSERT(Drew.acceptProposal(1) == 0);}
+       CPPUNIT_ASSERT(Drew.acceptProposal(1) == 1);}
        
    void test_acceptProposal_2() {
        int a1[5] = {3, 2, 4, 1, 5};
        Woman Drew = Woman(a1,5, 1); 
        Drew.engage(1);
-       CPPUNIT_ASSERT(Drew.acceptProposal(2) == 2);}
+       CPPUNIT_ASSERT(Drew.acceptProposal(2) == 1);}
        
     void test_acceptProposal_3() {
        int a1[5] = {3, 2, 4, 1, 5};
        Woman Drew = Woman(a1,5, 1); 
        Drew.engage(3);
-       CPPUNIT_ASSERT(Drew.acceptProposal(2) == 3);}
+       CPPUNIT_ASSERT(Drew.acceptProposal(2) == 0);}
+
+
+///SMP_print ------ void SMP_print(int finalMatches[], std::ostream& w, int numOfMatches)
+
+   void test_SMP_print_1() {
+	int finalMatches[1] = {3};
+	std::ostringstream w;
+	SMP_print(finalMatches, w, 1);
+	CPPUNIT_ASSERT(w.str() == "1 3\n"); } 
+
+   void test_SMP_print_2() {
+	int finalMatches[4] = {3,2,1,4};
+	std::ostringstream w;
+	SMP_print(finalMatches, w, 4);
+	CPPUNIT_ASSERT(w.str() == "1 3\n2 2\n3 1\n4 4\n");}
+
+
+//fillManArray ---- void fillManArray(Man men[], std::istream& r, int numOfMarriages)
+
+    void test_fillManArray_1() {
+	Man men[500];
+	std::istringstream r("1 3 2\n");
+	fillManArray(men, r , 2);
+	CPPUNIT_ASSERT(men[0].getNumber() == 1); }
+
+    void test_fillManArray_2 () {
+	Man men[500];
+	std::istringstream r("1 4 3 1 2\n2 2 1 3 4 \n3 1 3 4 2\n4 4 3 1 2\n");	
+	fillManArray(men, r , 4);
+	CPPUNIT_ASSERT(men[0].getNumber() == 1);
+	CPPUNIT_ASSERT(men[1].getNumber() == 2);
+	CPPUNIT_ASSERT(men[2].getNumber() == 3);
+	CPPUNIT_ASSERT(men[3].getNumber() == 4);
+}
+	
+	
+
+  //SMP_eval ----------void SMP_eval (Man men[], Woman women[], int finalMatches[], int numOfMatches ) {
+
+   void test_SMP_eval_1() {
+		//woman prefs
+	int wprefs1[4] = {4,3,1,2};
+        int wprefs2[4] = {2,1,3,4};
+        int wprefs3[4] = {1,3,4,2};
+        int wprefs4[4] = {4,3,1,2};
+		//man prefs
+	int mprefs1[4] = {3,2,4,1};
+	int mprefs2[4] = {2,3,1,4};
+	int mprefs3[4] = {3,1,2,4};
+	int mprefs4[4] = {3,2,4,1};
+
+	Woman w1 = Woman(wprefs1, 4, 1);
+	Woman w2 = Woman(wprefs2, 4, 2);
+	Woman w3 = Woman(wprefs3, 4, 3);
+	Woman w4 = Woman(wprefs4, 4, 4);
+
+	Man m1 = Man(mprefs1, 1);
+	Man m2 = Man(mprefs2, 2);
+	Man m3 = Man(mprefs3, 3);
+	Man m4 = Man(mprefs4, 4);
+
+	Man men[4] = {m1, m2, m3, m4};
+	Woman women[4] = {w1, w2, w3, w4};
+
+	int finalMatches[4];
+
+		//SMP_eval(menArray, womenArray, finalMatches, numOfMarriages);
+
+	SMP_eval(men, women, finalMatches, 4);
+	CPPUNIT_ASSERT(finalMatches[0] == 3);
+	CPPUNIT_ASSERT(finalMatches[1] == 2);
+	CPPUNIT_ASSERT(finalMatches[2] == 1);
+	CPPUNIT_ASSERT(finalMatches[3] == 4);  }
+
+    void test_SMP_eval_2() {
+		//woman prefs
+	int wprefs1[7] = {3,4,2,1,6,7,5};
+        int wprefs2[7] = {6,4,2,3,5,1,7};
+        int wprefs3[7] = {6,3,5,7,2,4,1};
+        int wprefs4[7] = {1,6,3,2,4,7,5};
+	int wprefs5[7] = {1,6,5,3,4,7,2};
+	int wprefs6[7] = {1,7,3,4,5,6,2};
+	int wprefs7[7] = {5,6,2,4,3,7,1};
+		//man prefs
+	int mprefs1[7] = {4,5,3,7,2,6,1};
+	int mprefs2[7] = {5,6,4,7,3,2,1};
+	int mprefs3[7] = {1,6,5,4,3,7,2};
+	int mprefs4[7] = {3,5,6,7,2,4,1};
+	int mprefs5[7] = {1,7,6,4,3,5,2};
+	int mprefs6[7] = {6,3,7,5,2,4,1};
+	int mprefs7[7] = {1,7,4,2,6,5,3};
+
+	Woman w1 = Woman(wprefs1, 7, 1);
+	Woman w2 = Woman(wprefs2, 7, 2);
+	Woman w3 = Woman(wprefs3, 7, 3);
+	Woman w4 = Woman(wprefs4, 7, 4);
+	Woman w5 = Woman(wprefs5, 7, 5);
+	Woman w6 = Woman(wprefs6, 7, 6);
+	Woman w7 = Woman(wprefs7, 7, 7); 
+
+
+	Man m1 = Man(mprefs1, 1);
+	Man m2 = Man(mprefs2, 2);
+	Man m3 = Man(mprefs3, 3);
+	Man m4 = Man(mprefs4, 4);
+	Man m5 = Man(mprefs5, 5);
+	Man m6 = Man(mprefs6, 6);
+	Man m7 = Man(mprefs7, 7);
+
+	Man men[7] = {m1, m2, m3, m4, m5, m6 ,m7};
+	Woman women[7] = {w1, w2, w3, w4, w5, w6, w7};
+
+	int finalMatches[7];
+
+		//SMP_eval(menArray, womenArray, finalMatches, numOfMarriages);
+
+	SMP_eval(men, women, finalMatches, 7);
+	CPPUNIT_ASSERT(finalMatches[0] == 4);
+	CPPUNIT_ASSERT(finalMatches[1] == 5);
+	CPPUNIT_ASSERT(finalMatches[2] == 1);
+	CPPUNIT_ASSERT(finalMatches[3] == 3);
+	CPPUNIT_ASSERT(finalMatches[4] == 7);
+	CPPUNIT_ASSERT(finalMatches[5] == 6);
+	//CPPUNIT_ASSERT(finalMatches[6] == 2); 
+}
    
+
+
 
     // -----
     // suite
@@ -354,7 +482,17 @@ struct TestSMP : CppUnit::TestFixture {
     CPPUNIT_TEST(test_acceptProposal_1);
     CPPUNIT_TEST(test_acceptProposal_2);
     CPPUNIT_TEST(test_acceptProposal_3);
-    
+
+    CPPUNIT_TEST(test_SMP_print_1);
+    CPPUNIT_TEST(test_SMP_print_2);
+
+    CPPUNIT_TEST(test_fillManArray_1);
+    CPPUNIT_TEST(test_fillManArray_2);
+
+    CPPUNIT_TEST(test_SMP_eval_1); 
+    CPPUNIT_TEST(test_SMP_eval_2); 
+  
+
     CPPUNIT_TEST_SUITE_END();};
 
     
