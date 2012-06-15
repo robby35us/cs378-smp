@@ -24,11 +24,36 @@ void fillWomanArray(Woman women[], std::istream& r, int numOfMarriages) {
 			r >> prefs[j];
 			women[i - 1] = Woman(prefs, numOfMarriages, womanNum); }}
 
-void SMP_eval (Man men[], Woman women[], int finalMatches[]) {
+void SMP_eval (Man men[], Woman women[], int finalMatches[], int numOfMatches ) {
+	bool disengaged = false;
+	Man* beg = men;
+	Man* end = men + numOfMatches;
+	while(beg < end) {
+		Man* current = beg;
+		while((*current).isFree()) {
+			int numWoman = (*current).propose();
+			Woman* lady = &women[numWoman - 1];	
+			int prevMatch = (*lady).getMatch();
+			if((*lady).acceptProposal((*current).getNumber())) {
+				(*current).engage(numWoman);
+				if(!prevMatch){	
+					men[prevMatch - 1].disengage();
+					disengaged = true;
+				}
+			}
+		}
+		++beg;
+	}
+	if(disengaged)
+		SMP_eval(men, women, finalMatches, numOfMatches);			 
+	else
+		for(int i = 0; i < numOfMatches; ++i)
+			finalMatches[i] = men[i].getMatch();
 }	
 
-void SMP_print(int finalMatches[], std::ostream& w) {
-
+void SMP_print(int finalMatches[], std::ostream& w, int numOfMatches) {
+	for(int i = 0; i < numOfMatches; ++i) 
+		w << (i + 1) << " " << finalMatches[i] << endl;
 }
 
 // -------------
@@ -52,8 +77,8 @@ void SMP_solve (std::istream& r, std::ostream& w) {
 	current_sex = man;
         fillManArray(menArray,r,numOfMarriages);
         int finalMatches[500];
-	SMP_eval(menArray, womenArray, finalMatches);
-        SMP_print(finalMatches, w);
+	SMP_eval(menArray, womenArray, finalMatches, numOfMarriages);
+        SMP_print(finalMatches, w, numOfMarriages);
         --numIterations;}
 }
 

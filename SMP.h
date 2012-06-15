@@ -72,22 +72,18 @@ class Woman : public Person {
          int manNum = prefs[pref];
 	 revPrefs[manNum - 1] = pref + 1;}
    }
-  
-  public: int acceptProposal(int numberOfMan) {
-     if(isFree()) {
-        engage(numberOfMan);
-        return 0;}
-     else {
-        if(wants_change_to(numberOfMan)) 
-	    match = numberOfMan;
-	return match;}
-  }
-  
-  
+ 
   public: bool wants_change_to(int possMatch) {
     if (revPrefs[match - 1] <= revPrefs[possMatch - 1])
       return false;
-    else { return true; }}
+    else
+      return true; }
+
+  public: bool acceptProposal(int numberOfMan) {
+     if(isFree() || wants_change_to(numberOfMan)) {
+        engage(numberOfMan);
+	   return 1;}
+    return 0;}
 };	
 	
      
