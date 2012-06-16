@@ -437,7 +437,8 @@ struct TestSMP : CppUnit::TestFixture {
 	CPPUNIT_ASSERT(finalMatches[3] == 3);
 	CPPUNIT_ASSERT(finalMatches[4] == 7);
 	CPPUNIT_ASSERT(finalMatches[5] == 6);
-	//CPPUNIT_ASSERT(finalMatches[6] == 2); 
+	CPPUNIT_ASSERT(finalMatches[6] == 2); 
+	cout << finalMatches[6] << endl;
 }
    
 
