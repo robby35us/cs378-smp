@@ -1,14 +1,15 @@
 //Person Class
 //
-
+#include <iostream> 
+using namespace std;
 class Person{
 
 
 static const int NO_MATCH = 0;
 
 private: bool is_free; 
-protected: int* prefs;   
-private: int number;  // unique for man/woman
+public: int prefs[500];   
+protected: int number;  // unique for man/woman
 protected: int match;  //number of match //  number of woman/man person is matched to
 
 public: Person() {}
@@ -16,7 +17,8 @@ public: Person() {}
 public: Person(int prefsList[], int numberOfPerson) 
 {
 is_free = true;
-prefs = prefsList; // prefsList[0]
+for(int i = 0; i < 500; i++)
+	prefs[i] = prefsList[i]; // prefsList[0]
 number = numberOfPerson;
 match = NO_MATCH;
 }
@@ -46,11 +48,13 @@ public: Man() {}
 private: int next_woman;
 
 public: Man(int prefsList[], int numberOfPerson) 
-   : Person(prefsList, numberOfPerson) {
+   : Person(prefsList, numberOfPerson) {			
    next_woman = 0; }
 
 public: int propose() {
-   return prefs[next_woman++]; }
+	int i = next_woman;
+	++next_woman;
+	 return prefs[i]; }
 };
 
 
@@ -65,6 +69,7 @@ class Woman : public Person {
   
   public: Woman(int prefsList[], int length, int numberOfPerson) 
    : Person(prefsList, numberOfPerson) {
+	  
       revPrefs = new int[length];
       for(int pref = 0; pref < length; ++pref) {
          int manNum = prefs[pref];
@@ -80,23 +85,21 @@ class Woman : public Person {
   public: bool acceptProposal(int numberOfMan) {
      if(isFree() || wants_change_to(numberOfMan)) {
         engage(numberOfMan);
-	   return 1;}
+	    return 1;}
     return 0;}
 };	
 	
      
 #include <iostream> 
-using namespace std;
-enum Sex {woman, man};
-Sex current_sex = woman;
+
 
 void fillManArray(Man men[], std::istream& r, int numOfMarriages) {
 	int manNum;
 	int prefs[500];
 	for(int i = 1; i <= numOfMarriages; ++i) {
         	r >> manNum;
-		for(int j = 0; j < numOfMarriages; ++j)
-			r >> prefs[j];
+		for(int j = 0; j < numOfMarriages; ++j) {
+			r >> prefs[j];	}
 			men[i - 1] = Man(prefs, manNum); }}
 
 void fillWomanArray(Woman women[], std::istream& r, int numOfMarriages) {
@@ -104,8 +107,8 @@ void fillWomanArray(Woman women[], std::istream& r, int numOfMarriages) {
 	int prefs[500];
 	for(int i = 1; i <= numOfMarriages; ++i) {
         	r >> womanNum;
-		for(int j = 0; j < numOfMarriages; ++j)
-			r >> prefs[j];
+		for(int j = 0; j < numOfMarriages; ++j) {
+			r >> prefs[j]; }
 			women[i - 1] = Woman(prefs, numOfMarriages, womanNum); }}
 
 void SMP_eval (Man men[], Woman women[], int finalMatches[], int numOfMatches ) {
@@ -116,14 +119,13 @@ void SMP_eval (Man men[], Woman women[], int finalMatches[], int numOfMatches ) 
 		Man* current = beg;
 		while((*current).isFree()) {
 			int numWoman = (*current).propose();
-			Woman* lady = &women[numWoman - 1];	
+			Woman* lady = women + numWoman - 1;
 			int prevMatch = (*lady).getMatch();
 			if((*lady).acceptProposal((*current).getNumber())) {
 				(*current).engage(numWoman);
 				if(prevMatch){	
 					men[prevMatch - 1].disengage();
-					disengaged = true;
-				}
+					disengaged = true; }
 			}
 		}
 		++beg;
@@ -152,16 +154,16 @@ void SMP_solve (std::istream& r, std::ostream& w) {
     int numIterations;
     int numOfMarriages;
     r >> numIterations;
-    while (numIterations != 0) {
-        r >> numOfMarriages;
+    while (numIterations > 0) {
+    r >> numOfMarriages;
 	Woman womenArray[500];
 	Man menArray[500];
-	current_sex = woman;
-        fillWomanArray(womenArray,r,numOfMarriages);
-	current_sex = man;
-        fillManArray(menArray,r,numOfMarriages);
-        int finalMatches[500];
-	SMP_eval(menArray, womenArray, finalMatches, numOfMarriages);
-        SMP_print(finalMatches, w, numOfMarriages);
-        --numIterations;}
+    fillWomanArray(womenArray,r,numOfMarriages);
+    fillManArray(menArray,r,numOfMarriages);	
+    int finalMatches[500];
+    SMP_eval(menArray, womenArray, finalMatches, numOfMarriages);
+	SMP_print(finalMatches, w, numOfMarriages);
+	--numIterations;}
 }
+
+
