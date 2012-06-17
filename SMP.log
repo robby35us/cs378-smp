@@ -1,8 +1,52 @@
+commit 8efedbacef4a51d3b1707a7fbad387c8625103e6
+Author: Robert Reed <callmeelasinthe@gmail.com>
+Date:   Sat Jun 16 20:34:52 2012 -0500
+
+    Updated all files for final submission
+
+commit e970f72b229fee7a26a3cb2f6edbfbadf0191cf1
+Merge: f1304e0 9c4e875
+Author: Robert Reed <callmeelasinthe@gmail.com>
+Date:   Sat Jun 16 20:07:43 2012 -0500
+
+    Merge branch 'master' of http://github.com/robby35us/cs378-smp
+
+commit f1304e07af9a761b637635f72a44f5655576e325
+Author: Robert Reed <callmeelasinthe@gmail.com>
+Date:   Sat Jun 16 20:07:18 2012 -0500
+
+    Completed Documentation and added commit log #7 #19
+
+commit 9c4e875a42704d19cd68d5775799c1c82626779a
+Author: Jordan Graves <jgraves8205@aol.com>
+Date:   Sat Jun 16 20:03:04 2012 -0500
+
+    trying to add unit tests
+
+commit 9affb2fc2a7595152b903c29762751f9729342a6
+Author: Jordan Graves <jgraves8205@aol.com>
+Date:   Sat Jun 16 20:00:21 2012 -0500
+
+    Adding unit tests
+
+commit 043616d8ddf1890d2571e2e3b2528a02f3cfbc86
+Merge: 7560890 6aebea4
+Author: Jordan Graves <jgraves8205@aol.com>
+Date:   Sat Jun 16 19:56:47 2012 -0500
+
+    Merge branch 'master' of https://github.com/robby35us/cs378-smp
+
 commit 6aebea401ed122a82a0e99ffb6f90b323cf8ac23
 Author: Robert Reed <callmeelasinthe@gmail.com>
 Date:   Sat Jun 16 19:52:46 2012 -0500
 
     Got sphere to accept our program, and double checked big O constraints
+
+commit 75608905d1ad4ed3b015e2d7d5f9c186c2ff958f
+Author: Jordan Graves <jgraves8205@aol.com>
+Date:   Sat Jun 16 19:23:31 2012 -0500
+
+    adding final unit tests
 
 commit 6d78c24ce28ab1e2c30d8cf17256f26a627918fc
 Merge: d7fa4e7 aa70492
