@@ -1,3 +1,733 @@
+==5469== Memcheck, a memory error detector
+==5469== Copyright (C) 2002-2009, and GNU GPL'd, by Julian Seward et al.
+==5469== Using Valgrind-3.6.0.SVN-Debian and LibVEX; rerun with -h for copyright info
+==5469== Command: RunSMP.c++.app
+==5469== 
+==5469== Warning: client switching stacks?  SP change: 0xbecde730 --> 0xbeaf1c40
+==5469==          to suppress, use: --max-stackframe=2018032 or greater
+==5469== Invalid write of size 4
+==5469==    at 0x8048BCB: SMP_solve(std::istream&, std::ostream&) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048D0D: main (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==  Address 0xbeaf1c44 is on thread 1's stack
+==5469== 
+==5469== Invalid write of size 4
+==5469==    at 0x8048BD2: SMP_solve(std::istream&, std::ostream&) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048D0D: main (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==  Address 0xbeaf1c40 is on thread 1's stack
+==5469== 
+==5469== Invalid read of size 4
+==5469==    at 0x40C62BA: std::istream::operator>>(int&) (in /usr/lib/libstdc++.so.6.0.13)
+==5469==    by 0x8048BD9: SMP_solve(std::istream&, std::ostream&) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048D0D: main (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==  Address 0xbeaf1c40 is on thread 1's stack
+==5469== 
+==5469== Invalid read of size 4
+==5469==    at 0x40C62D8: std::istream::operator>>(int&) (in /usr/lib/libstdc++.so.6.0.13)
+==5469==    by 0x8048BD9: SMP_solve(std::istream&, std::ostream&) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048D0D: main (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==  Address 0xbeaf1c44 is on thread 1's stack
+==5469== 
+==5469== Invalid write of size 4
+==5469==    at 0x40C62DB: std::istream::operator>>(int&) (in /usr/lib/libstdc++.so.6.0.13)
+==5469==    by 0x8048BD9: SMP_solve(std::istream&, std::ostream&) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048D0D: main (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==  Address 0xbecde72c is on thread 1's stack
+==5469== 
+==5469== Invalid read of size 4
+==5469==    at 0x8048CCB: SMP_solve(std::istream&, std::ostream&) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048D0D: main (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==  Address 0xbecde72c is on thread 1's stack
+==5469== 
+==5469== Invalid write of size 4
+==5469==    at 0x8048BE2: SMP_solve(std::istream&, std::ostream&) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048D0D: main (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==  Address 0xbeaf1c44 is on thread 1's stack
+==5469== 
+==5469== Invalid write of size 4
+==5469==    at 0x8048BE9: SMP_solve(std::istream&, std::ostream&) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048D0D: main (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==  Address 0xbeaf1c40 is on thread 1's stack
+==5469== 
+==5469== Invalid read of size 4
+==5469==    at 0x40C62BA: std::istream::operator>>(int&) (in /usr/lib/libstdc++.so.6.0.13)
+==5469==    by 0x8048BF0: SMP_solve(std::istream&, std::ostream&) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048D0D: main (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==  Address 0xbeaf1c40 is on thread 1's stack
+==5469== 
+==5469== Invalid read of size 4
+==5469==    at 0x40C62D8: std::istream::operator>>(int&) (in /usr/lib/libstdc++.so.6.0.13)
+==5469==    by 0x8048BF0: SMP_solve(std::istream&, std::ostream&) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048D0D: main (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==  Address 0xbeaf1c44 is on thread 1's stack
+==5469== 
+==5469== Invalid write of size 4
+==5469==    at 0x40C62DB: std::istream::operator>>(int&) (in /usr/lib/libstdc++.so.6.0.13)
+==5469==    by 0x8048BF0: SMP_solve(std::istream&, std::ostream&) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048D0D: main (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==  Address 0xbecde728 is on thread 1's stack
+==5469== 
+==5469== Invalid write of size 4
+==5469==    at 0x8048C00: SMP_solve(std::istream&, std::ostream&) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048D0D: main (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==  Address 0xbeaf1c40 is on thread 1's stack
+==5469== 
+==5469== Invalid read of size 4
+==5469==    at 0x8048EA4: Woman::Woman() (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048C07: SMP_solve(std::istream&, std::ostream&) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048D0D: main (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==  Address 0xbeaf1c40 is on thread 1's stack
+==5469== 
+==5469== Invalid write of size 4
+==5469==    at 0x8048C2A: SMP_solve(std::istream&, std::ostream&) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048D0D: main (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==  Address 0xbeaf1c40 is on thread 1's stack
+==5469== 
+==5469== Invalid read of size 4
+==5469==    at 0x8048E2E: Man::Man() (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048C31: SMP_solve(std::istream&, std::ostream&) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048D0D: main (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==  Address 0xbeaf1c40 is on thread 1's stack
+==5469== 
+==5469== Invalid read of size 4
+==5469==    at 0x8048C45: SMP_solve(std::istream&, std::ostream&) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048D0D: main (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==  Address 0xbecde728 is on thread 1's stack
+==5469== 
+==5469== Invalid write of size 4
+==5469==    at 0x8048C48: SMP_solve(std::istream&, std::ostream&) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048D0D: main (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==  Address 0xbeaf1c48 is on thread 1's stack
+==5469== 
+==5469== Invalid write of size 4
+==5469==    at 0x8048C4F: SMP_solve(std::istream&, std::ostream&) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048D0D: main (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==  Address 0xbeaf1c44 is on thread 1's stack
+==5469== 
+==5469== Invalid write of size 4
+==5469==    at 0x8048C59: SMP_solve(std::istream&, std::ostream&) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048D0D: main (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==  Address 0xbeaf1c40 is on thread 1's stack
+==5469== 
+==5469== Invalid read of size 4
+==5469==    at 0x80489CE: fillWomanArray(Woman*, std::istream&, int) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048C60: SMP_solve(std::istream&, std::ostream&) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048D0D: main (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==  Address 0xbeaf1c48 is on thread 1's stack
+==5469== 
+==5469== Invalid read of size 4
+==5469==    at 0x8048931: fillWomanArray(Woman*, std::istream&, int) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048C60: SMP_solve(std::istream&, std::ostream&) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048D0D: main (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==  Address 0xbeaf1c44 is on thread 1's stack
+==5469== 
+==5469== Invalid read of size 4
+==5469==    at 0x8048969: fillWomanArray(Woman*, std::istream&, int) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048C60: SMP_solve(std::istream&, std::ostream&) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048D0D: main (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==  Address 0xbeaf1c48 is on thread 1's stack
+==5469== 
+==5469== Invalid read of size 4
+==5469==    at 0x8048957: fillWomanArray(Woman*, std::istream&, int) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048C60: SMP_solve(std::istream&, std::ostream&) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048D0D: main (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==  Address 0xbeaf1c44 is on thread 1's stack
+==5469== 
+==5469== Invalid read of size 4
+==5469==    at 0x8048989: fillWomanArray(Woman*, std::istream&, int) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048C60: SMP_solve(std::istream&, std::ostream&) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048D0D: main (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==  Address 0xbeaf1c40 is on thread 1's stack
+==5469== 
+==5469== Invalid read of size 4
+==5469==    at 0x8048993: fillWomanArray(Woman*, std::istream&, int) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048C60: SMP_solve(std::istream&, std::ostream&) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048D0D: main (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==  Address 0xbeaf1c48 is on thread 1's stack
+==5469== 
+==5469== Invalid write of size 4
+==5469==    at 0x80489C5: fillWomanArray(Woman*, std::istream&, int) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048C60: SMP_solve(std::istream&, std::ostream&) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048D0D: main (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==  Address 0xbebe7dd8 is on thread 1's stack
+==5469== 
+==5469== Invalid read of size 4
+==5469==    at 0x8048C61: SMP_solve(std::istream&, std::ostream&) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048D0D: main (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==  Address 0xbecde728 is on thread 1's stack
+==5469== 
+==5469== Invalid write of size 4
+==5469==    at 0x8048C64: SMP_solve(std::istream&, std::ostream&) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048D0D: main (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==  Address 0xbeaf1c48 is on thread 1's stack
+==5469== 
+==5469== Invalid write of size 4
+==5469==    at 0x8048C6B: SMP_solve(std::istream&, std::ostream&) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048D0D: main (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==  Address 0xbeaf1c44 is on thread 1's stack
+==5469== 
+==5469== Invalid write of size 4
+==5469==    at 0x8048C75: SMP_solve(std::istream&, std::ostream&) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048D0D: main (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==  Address 0xbeaf1c40 is on thread 1's stack
+==5469== 
+==5469== Invalid read of size 4
+==5469==    at 0x80488F9: fillManArray(Man*, std::istream&, int) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048C7C: SMP_solve(std::istream&, std::ostream&) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048D0D: main (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==  Address 0xbeaf1c48 is on thread 1's stack
+==5469== 
+==5469== Invalid read of size 4
+==5469==    at 0x8048863: fillManArray(Man*, std::istream&, int) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048C7C: SMP_solve(std::istream&, std::ostream&) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048D0D: main (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==  Address 0xbeaf1c44 is on thread 1's stack
+==5469== 
+==5469== Invalid read of size 4
+==5469==    at 0x804889B: fillManArray(Man*, std::istream&, int) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048C7C: SMP_solve(std::istream&, std::ostream&) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048D0D: main (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==  Address 0xbeaf1c48 is on thread 1's stack
+==5469== 
+==5469== Invalid read of size 4
+==5469==    at 0x8048889: fillManArray(Man*, std::istream&, int) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048C7C: SMP_solve(std::istream&, std::ostream&) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048D0D: main (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==  Address 0xbeaf1c44 is on thread 1's stack
+==5469== 
+==5469== Invalid read of size 4
+==5469==    at 0x80488BB: fillManArray(Man*, std::istream&, int) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048C7C: SMP_solve(std::istream&, std::ostream&) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048D0D: main (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==  Address 0xbeaf1c40 is on thread 1's stack
+==5469== 
+==5469== Invalid write of size 4
+==5469==    at 0x80488F0: fillManArray(Man*, std::istream&, int) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048C7C: SMP_solve(std::istream&, std::ostream&) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048D0D: main (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==  Address 0xbeaf1c58 is on thread 1's stack
+==5469== 
+==5469== Invalid read of size 4
+==5469==    at 0x8048C7D: SMP_solve(std::istream&, std::ostream&) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048D0D: main (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==  Address 0xbecde728 is on thread 1's stack
+==5469== 
+==5469== Invalid write of size 4
+==5469==    at 0x8048C80: SMP_solve(std::istream&, std::ostream&) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048D0D: main (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==  Address 0xbeaf1c4c is on thread 1's stack
+==5469== 
+==5469== Invalid write of size 4
+==5469==    at 0x8048C8A: SMP_solve(std::istream&, std::ostream&) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048D0D: main (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==  Address 0xbeaf1c48 is on thread 1's stack
+==5469== 
+==5469== Invalid write of size 4
+==5469==    at 0x8048C94: SMP_solve(std::istream&, std::ostream&) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048D0D: main (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==  Address 0xbeaf1c44 is on thread 1's stack
+==5469== 
+==5469== Invalid write of size 4
+==5469==    at 0x8048C9E: SMP_solve(std::istream&, std::ostream&) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048D0D: main (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==  Address 0xbeaf1c40 is on thread 1's stack
+==5469== 
+==5469== Invalid read of size 4
+==5469==    at 0x80489F2: SMP_eval(Man*, Woman*, int*, int) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048CA5: SMP_solve(std::istream&, std::ostream&) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048D0D: main (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==  Address 0xbeaf1c40 is on thread 1's stack
+==5469== 
+==5469== Invalid read of size 4
+==5469==    at 0x80489F8: SMP_eval(Man*, Woman*, int*, int) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048CA5: SMP_solve(std::istream&, std::ostream&) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048D0D: main (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==  Address 0xbeaf1c4c is on thread 1's stack
+==5469== 
+==5469== Invalid read of size 4
+==5469==    at 0x8048A09: SMP_eval(Man*, Woman*, int*, int) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048CA5: SMP_solve(std::istream&, std::ostream&) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048D0D: main (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==  Address 0xbeaf1c40 is on thread 1's stack
+==5469== 
+==5469== Invalid read of size 1
+==5469==    at 0x8048DD6: Person::isFree() (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048AB8: SMP_eval(Man*, Woman*, int*, int) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048CA5: SMP_solve(std::istream&, std::ostream&) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048D0D: main (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==  Address 0xbeaf1c58 is on thread 1's stack
+==5469== 
+==5469== Invalid read of size 4
+==5469==    at 0x8048E73: Man::propose() (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048A29: SMP_eval(Man*, Woman*, int*, int) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048CA5: SMP_solve(std::istream&, std::ostream&) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048D0D: main (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==  Address 0xbeaf2434 is on thread 1's stack
+==5469== 
+==5469== Invalid read of size 4
+==5469==    at 0x8048E7F: Man::propose() (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048A29: SMP_eval(Man*, Woman*, int*, int) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048CA5: SMP_solve(std::istream&, std::ostream&) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048D0D: main (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==  Address 0xbeaf2434 is on thread 1's stack
+==5469== 
+==5469== Invalid write of size 4
+==5469==    at 0x8048E8B: Man::propose() (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048A29: SMP_eval(Man*, Woman*, int*, int) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048CA5: SMP_solve(std::istream&, std::ostream&) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048D0D: main (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==  Address 0xbeaf2434 is on thread 1's stack
+==5469== 
+==5469== Invalid read of size 4
+==5469==    at 0x8048E97: Man::propose() (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048A29: SMP_eval(Man*, Woman*, int*, int) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048CA5: SMP_solve(std::istream&, std::ostream&) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048D0D: main (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==  Address 0xbeaf1c5c is on thread 1's stack
+==5469== 
+==5469== Invalid read of size 4
+==5469==    at 0x8048A41: SMP_eval(Man*, Woman*, int*, int) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048CA5: SMP_solve(std::istream&, std::ostream&) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048D0D: main (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==  Address 0xbeaf1c44 is on thread 1's stack
+==5469== 
+==5469== Invalid read of size 4
+==5469==    at 0x8048DF0: Person::getMatch() (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048A51: SMP_eval(Man*, Woman*, int*, int) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048CA5: SMP_solve(std::istream&, std::ostream&) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048D0D: main (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==  Address 0xbec04e70 is on thread 1's stack
+==5469== 
+==5469== Invalid read of size 4
+==5469==    at 0x8048DE2: Person::getNumber() (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048A5F: SMP_eval(Man*, Woman*, int*, int) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048CA5: SMP_solve(std::istream&, std::ostream&) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048D0D: main (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==  Address 0xbeaf242c is on thread 1's stack
+==5469== 
+==5469== Invalid read of size 1
+==5469==    at 0x8048DD6: Person::isFree() (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048F88: Woman::acceptProposal(int) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048A6E: SMP_eval(Man*, Woman*, int*, int) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048CA5: SMP_solve(std::istream&, std::ostream&) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048D0D: main (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==  Address 0xbec04698 is on thread 1's stack
+==5469== 
+==5469== Invalid write of size 4
+==5469==    at 0x8048E01: Person::engage(int) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048FC4: Woman::acceptProposal(int) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048A6E: SMP_eval(Man*, Woman*, int*, int) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048CA5: SMP_solve(std::istream&, std::ostream&) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048D0D: main (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==  Address 0xbec04e70 is on thread 1's stack
+==5469== 
+==5469== Invalid write of size 1
+==5469==    at 0x8048E0A: Person::engage(int) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048FC4: Woman::acceptProposal(int) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048A6E: SMP_eval(Man*, Woman*, int*, int) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048CA5: SMP_solve(std::istream&, std::ostream&) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048D0D: main (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==  Address 0xbec04698 is on thread 1's stack
+==5469== 
+==5469== Invalid write of size 4
+==5469==    at 0x8048E01: Person::engage(int) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048A84: SMP_eval(Man*, Woman*, int*, int) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048CA5: SMP_solve(std::istream&, std::ostream&) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048D0D: main (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==  Address 0xbeaf2430 is on thread 1's stack
+==5469== 
+==5469== Invalid write of size 1
+==5469==    at 0x8048E0A: Person::engage(int) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048A84: SMP_eval(Man*, Woman*, int*, int) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048CA5: SMP_solve(std::istream&, std::ostream&) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048D0D: main (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==  Address 0xbeaf1c58 is on thread 1's stack
+==5469== 
+==5469== Invalid read of size 4
+==5469==    at 0x8048F36: Woman::wants_change_to(int) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048F9E: Woman::acceptProposal(int) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048A6E: SMP_eval(Man*, Woman*, int*, int) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048CA5: SMP_solve(std::istream&, std::ostream&) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048D0D: main (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==  Address 0xbec2acd4 is on thread 1's stack
+==5469== 
+==5469== Invalid read of size 4
+==5469==    at 0x8048F3F: Woman::wants_change_to(int) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048F9E: Woman::acceptProposal(int) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048A6E: SMP_eval(Man*, Woman*, int*, int) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048CA5: SMP_solve(std::istream&, std::ostream&) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048D0D: main (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==  Address 0xbec2acd0 is on thread 1's stack
+==5469== 
+==5469== Invalid read of size 4
+==5469==    at 0x8048F53: Woman::wants_change_to(int) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048F9E: Woman::acceptProposal(int) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048A6E: SMP_eval(Man*, Woman*, int*, int) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048CA5: SMP_solve(std::istream&, std::ostream&) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048D0D: main (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==  Address 0xbec2acd4 is on thread 1's stack
+==5469== 
+==5469== Invalid read of size 4
+==5469==    at 0x8048A9F: SMP_eval(Man*, Woman*, int*, int) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048CA5: SMP_solve(std::istream&, std::ostream&) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048D0D: main (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==  Address 0xbeaf1c40 is on thread 1's stack
+==5469== 
+==5469== Invalid write of size 4
+==5469==    at 0x8048E16: Person::disengage() (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048AA9: SMP_eval(Man*, Woman*, int*, int) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048CA5: SMP_solve(std::istream&, std::ostream&) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048D0D: main (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==  Address 0xbeaf5370 is on thread 1's stack
+==5469== 
+==5469== Invalid write of size 1
+==5469==    at 0x8048E23: Person::disengage() (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048AA9: SMP_eval(Man*, Woman*, int*, int) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048CA5: SMP_solve(std::istream&, std::ostream&) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048D0D: main (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==  Address 0xbeaf4b98 is on thread 1's stack
+==5469== 
+==5469== Invalid read of size 4
+==5469==    at 0x8048ADF: SMP_eval(Man*, Woman*, int*, int) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048CA5: SMP_solve(std::istream&, std::ostream&) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048D0D: main (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==  Address 0xbeaf1c4c is on thread 1's stack
+==5469== 
+==5469== Invalid read of size 4
+==5469==    at 0x8048AE6: SMP_eval(Man*, Woman*, int*, int) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048CA5: SMP_solve(std::istream&, std::ostream&) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048D0D: main (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==  Address 0xbeaf1c48 is on thread 1's stack
+==5469== 
+==5469== Invalid read of size 4
+==5469==    at 0x8048AED: SMP_eval(Man*, Woman*, int*, int) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048CA5: SMP_solve(std::istream&, std::ostream&) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048D0D: main (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==  Address 0xbeaf1c44 is on thread 1's stack
+==5469== 
+==5469== Invalid read of size 4
+==5469==    at 0x8048AF4: SMP_eval(Man*, Woman*, int*, int) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048CA5: SMP_solve(std::istream&, std::ostream&) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048D0D: main (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==  Address 0xbeaf1c40 is on thread 1's stack
+==5469== 
+==5469== Invalid read of size 1
+==5469==    at 0x8048DD6: Person::isFree() (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048AB8: SMP_eval(Man*, Woman*, int*, int) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048AFE: SMP_eval(Man*, Woman*, int*, int) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048CA5: SMP_solve(std::istream&, std::ostream&) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048D0D: main (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==  Address 0xbeaf1c58 is on thread 1's stack
+==5469== 
+==5469== Invalid read of size 4
+==5469==    at 0x8048E73: Man::propose() (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048A29: SMP_eval(Man*, Woman*, int*, int) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048AFE: SMP_eval(Man*, Woman*, int*, int) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048CA5: SMP_solve(std::istream&, std::ostream&) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048D0D: main (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==  Address 0xbeaf3bd4 is on thread 1's stack
+==5469== 
+==5469== Invalid read of size 4
+==5469==    at 0x8048E7F: Man::propose() (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048A29: SMP_eval(Man*, Woman*, int*, int) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048AFE: SMP_eval(Man*, Woman*, int*, int) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048CA5: SMP_solve(std::istream&, std::ostream&) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048D0D: main (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==  Address 0xbeaf3bd4 is on thread 1's stack
+==5469== 
+==5469== Invalid write of size 4
+==5469==    at 0x8048E8B: Man::propose() (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048A29: SMP_eval(Man*, Woman*, int*, int) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048AFE: SMP_eval(Man*, Woman*, int*, int) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048CA5: SMP_solve(std::istream&, std::ostream&) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048D0D: main (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==  Address 0xbeaf3bd4 is on thread 1's stack
+==5469== 
+==5469== Invalid read of size 4
+==5469==    at 0x8048E97: Man::propose() (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048A29: SMP_eval(Man*, Woman*, int*, int) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048AFE: SMP_eval(Man*, Woman*, int*, int) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048CA5: SMP_solve(std::istream&, std::ostream&) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048D0D: main (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==  Address 0xbeaf3400 is on thread 1's stack
+==5469== 
+==5469== Invalid read of size 4
+==5469==    at 0x8048DF0: Person::getMatch() (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048A51: SMP_eval(Man*, Woman*, int*, int) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048AFE: SMP_eval(Man*, Woman*, int*, int) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048CA5: SMP_solve(std::istream&, std::ostream&) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048D0D: main (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==  Address 0xbec1b0d0 is on thread 1's stack
+==5469== 
+==5469== Invalid read of size 4
+==5469==    at 0x8048DE2: Person::getNumber() (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048A5F: SMP_eval(Man*, Woman*, int*, int) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048AFE: SMP_eval(Man*, Woman*, int*, int) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048CA5: SMP_solve(std::istream&, std::ostream&) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048D0D: main (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==  Address 0xbeaf3bcc is on thread 1's stack
+==5469== 
+==5469== Invalid read of size 1
+==5469==    at 0x8048DD6: Person::isFree() (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048F88: Woman::acceptProposal(int) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048A6E: SMP_eval(Man*, Woman*, int*, int) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048AFE: SMP_eval(Man*, Woman*, int*, int) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048CA5: SMP_solve(std::istream&, std::ostream&) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048D0D: main (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==  Address 0xbec1a8f8 is on thread 1's stack
+==5469== 
+==5469== Invalid read of size 4
+==5469==    at 0x8048F36: Woman::wants_change_to(int) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048F9E: Woman::acceptProposal(int) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048A6E: SMP_eval(Man*, Woman*, int*, int) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048AFE: SMP_eval(Man*, Woman*, int*, int) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048CA5: SMP_solve(std::istream&, std::ostream&) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048D0D: main (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==  Address 0xbec1b0d4 is on thread 1's stack
+==5469== 
+==5469== Invalid read of size 4
+==5469==    at 0x8048F3F: Woman::wants_change_to(int) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048F9E: Woman::acceptProposal(int) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048A6E: SMP_eval(Man*, Woman*, int*, int) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048AFE: SMP_eval(Man*, Woman*, int*, int) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048CA5: SMP_solve(std::istream&, std::ostream&) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048D0D: main (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==  Address 0xbec1b0d0 is on thread 1's stack
+==5469== 
+==5469== Invalid read of size 4
+==5469==    at 0x8048F53: Woman::wants_change_to(int) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048F9E: Woman::acceptProposal(int) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048A6E: SMP_eval(Man*, Woman*, int*, int) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048AFE: SMP_eval(Man*, Woman*, int*, int) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048CA5: SMP_solve(std::istream&, std::ostream&) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048D0D: main (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==  Address 0xbec1b0d4 is on thread 1's stack
+==5469== 
+==5469== Invalid write of size 4
+==5469==    at 0x8048E01: Person::engage(int) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048FC4: Woman::acceptProposal(int) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048A6E: SMP_eval(Man*, Woman*, int*, int) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048AFE: SMP_eval(Man*, Woman*, int*, int) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048CA5: SMP_solve(std::istream&, std::ostream&) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048D0D: main (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==  Address 0xbec5dfd0 is on thread 1's stack
+==5469== 
+==5469== Invalid write of size 1
+==5469==    at 0x8048E0A: Person::engage(int) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048FC4: Woman::acceptProposal(int) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048A6E: SMP_eval(Man*, Woman*, int*, int) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048AFE: SMP_eval(Man*, Woman*, int*, int) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048CA5: SMP_solve(std::istream&, std::ostream&) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048D0D: main (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==  Address 0xbec5d7f8 is on thread 1's stack
+==5469== 
+==5469== Invalid write of size 4
+==5469==    at 0x8048E01: Person::engage(int) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048A84: SMP_eval(Man*, Woman*, int*, int) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048AFE: SMP_eval(Man*, Woman*, int*, int) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048CA5: SMP_solve(std::istream&, std::ostream&) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048D0D: main (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==  Address 0xbeaf3bd0 is on thread 1's stack
+==5469== 
+==5469== Invalid write of size 1
+==5469==    at 0x8048E0A: Person::engage(int) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048A84: SMP_eval(Man*, Woman*, int*, int) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048AFE: SMP_eval(Man*, Woman*, int*, int) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048CA5: SMP_solve(std::istream&, std::ostream&) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048D0D: main (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==  Address 0xbeaf33f8 is on thread 1's stack
+==5469== 
+==5469== Invalid write of size 4
+==5469==    at 0x8048E16: Person::disengage() (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048AA9: SMP_eval(Man*, Woman*, int*, int) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048AFE: SMP_eval(Man*, Woman*, int*, int) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048CA5: SMP_solve(std::istream&, std::ostream&) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048D0D: main (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==  Address 0xbeb48650 is on thread 1's stack
+==5469== 
+==5469== Invalid write of size 1
+==5469==    at 0x8048E23: Person::disengage() (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048AA9: SMP_eval(Man*, Woman*, int*, int) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048AFE: SMP_eval(Man*, Woman*, int*, int) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048CA5: SMP_solve(std::istream&, std::ostream&) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048D0D: main (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==  Address 0xbeb47e78 is on thread 1's stack
+==5469== 
+==5469== Invalid read of size 1
+==5469==    at 0x8048DD6: Person::isFree() (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048AB8: SMP_eval(Man*, Woman*, int*, int) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048AFE: SMP_eval(Man*, Woman*, int*, int) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048AFE: SMP_eval(Man*, Woman*, int*, int) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048CA5: SMP_solve(std::istream&, std::ostream&) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048D0D: main (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==  Address 0xbeaf1c58 is on thread 1's stack
+==5469== 
+==5469== Invalid read of size 4
+==5469==    at 0x8048E73: Man::propose() (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048A29: SMP_eval(Man*, Woman*, int*, int) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048AFE: SMP_eval(Man*, Woman*, int*, int) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048AFE: SMP_eval(Man*, Woman*, int*, int) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048CA5: SMP_solve(std::istream&, std::ostream&) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048D0D: main (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==  Address 0xbeaf3bd4 is on thread 1's stack
+==5469== 
+==5469== Invalid read of size 4
+==5469==    at 0x8048E7F: Man::propose() (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048A29: SMP_eval(Man*, Woman*, int*, int) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048AFE: SMP_eval(Man*, Woman*, int*, int) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048AFE: SMP_eval(Man*, Woman*, int*, int) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048CA5: SMP_solve(std::istream&, std::ostream&) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048D0D: main (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==  Address 0xbeaf3bd4 is on thread 1's stack
+==5469== 
+==5469== Invalid write of size 4
+==5469==    at 0x8048E8B: Man::propose() (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048A29: SMP_eval(Man*, Woman*, int*, int) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048AFE: SMP_eval(Man*, Woman*, int*, int) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048AFE: SMP_eval(Man*, Woman*, int*, int) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048CA5: SMP_solve(std::istream&, std::ostream&) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048D0D: main (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==  Address 0xbeaf3bd4 is on thread 1's stack
+==5469== 
+==5469== Invalid read of size 4
+==5469==    at 0x8048E97: Man::propose() (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048A29: SMP_eval(Man*, Woman*, int*, int) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048AFE: SMP_eval(Man*, Woman*, int*, int) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048AFE: SMP_eval(Man*, Woman*, int*, int) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048CA5: SMP_solve(std::istream&, std::ostream&) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048D0D: main (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==  Address 0xbeaf3408 is on thread 1's stack
+==5469== 
+==5469== Invalid read of size 4
+==5469==    at 0x8048DF0: Person::getMatch() (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048A51: SMP_eval(Man*, Woman*, int*, int) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048AFE: SMP_eval(Man*, Woman*, int*, int) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048AFE: SMP_eval(Man*, Woman*, int*, int) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048CA5: SMP_solve(std::istream&, std::ostream&) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048D0D: main (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==  Address 0xbebeb4f0 is on thread 1's stack
+==5469== 
+==5469== Invalid read of size 4
+==5469==    at 0x8048DE2: Person::getNumber() (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048A5F: SMP_eval(Man*, Woman*, int*, int) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048AFE: SMP_eval(Man*, Woman*, int*, int) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048AFE: SMP_eval(Man*, Woman*, int*, int) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048CA5: SMP_solve(std::istream&, std::ostream&) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048D0D: main (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==  Address 0xbeaf3bcc is on thread 1's stack
+==5469== 
+==5469== Invalid write of size 4
+==5469==    at 0x8048E01: Person::engage(int) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048A84: SMP_eval(Man*, Woman*, int*, int) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048AFE: SMP_eval(Man*, Woman*, int*, int) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048AFE: SMP_eval(Man*, Woman*, int*, int) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048CA5: SMP_solve(std::istream&, std::ostream&) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048D0D: main (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==  Address 0xbeaf3bd0 is on thread 1's stack
+==5469== 
+==5469== Invalid write of size 1
+==5469==    at 0x8048E0A: Person::engage(int) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048A84: SMP_eval(Man*, Woman*, int*, int) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048AFE: SMP_eval(Man*, Woman*, int*, int) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048AFE: SMP_eval(Man*, Woman*, int*, int) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048CA5: SMP_solve(std::istream&, std::ostream&) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048D0D: main (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==  Address 0xbeaf33f8 is on thread 1's stack
+==5469== 
+==5469== Invalid write of size 4
+==5469==    at 0x8048E16: Person::disengage() (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048AA9: SMP_eval(Man*, Woman*, int*, int) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048AFE: SMP_eval(Man*, Woman*, int*, int) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048AFE: SMP_eval(Man*, Woman*, int*, int) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048CA5: SMP_solve(std::istream&, std::ostream&) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048D0D: main (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==  Address 0xbeb4a5d0 is on thread 1's stack
+==5469== 
+==5469== Invalid write of size 1
+==5469==    at 0x8048E23: Person::disengage() (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048AA9: SMP_eval(Man*, Woman*, int*, int) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048AFE: SMP_eval(Man*, Woman*, int*, int) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048AFE: SMP_eval(Man*, Woman*, int*, int) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048CA5: SMP_solve(std::istream&, std::ostream&) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048D0D: main (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==  Address 0xbeb49df8 is on thread 1's stack
+==5469== 
+==5469== Invalid read of size 4
+==5469==    at 0x8048DF0: Person::getMatch() (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048B30: SMP_eval(Man*, Woman*, int*, int) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048AFE: SMP_eval(Man*, Woman*, int*, int) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048AFE: SMP_eval(Man*, Woman*, int*, int) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048AFE: SMP_eval(Man*, Woman*, int*, int) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048AFE: SMP_eval(Man*, Woman*, int*, int) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048AFE: SMP_eval(Man*, Woman*, int*, int) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048AFE: SMP_eval(Man*, Woman*, int*, int) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048AFE: SMP_eval(Man*, Woman*, int*, int) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048AFE: SMP_eval(Man*, Woman*, int*, int) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048AFE: SMP_eval(Man*, Woman*, int*, int) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048AFE: SMP_eval(Man*, Woman*, int*, int) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==  Address 0xbeaf2430 is on thread 1's stack
+==5469== 
+==5469== Invalid write of size 4
+==5469==    at 0x8048B31: SMP_eval(Man*, Woman*, int*, int) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048AFE: SMP_eval(Man*, Woman*, int*, int) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048AFE: SMP_eval(Man*, Woman*, int*, int) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048AFE: SMP_eval(Man*, Woman*, int*, int) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048AFE: SMP_eval(Man*, Woman*, int*, int) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048AFE: SMP_eval(Man*, Woman*, int*, int) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048AFE: SMP_eval(Man*, Woman*, int*, int) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048AFE: SMP_eval(Man*, Woman*, int*, int) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048AFE: SMP_eval(Man*, Woman*, int*, int) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048AFE: SMP_eval(Man*, Woman*, int*, int) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048AFE: SMP_eval(Man*, Woman*, int*, int) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048AFE: SMP_eval(Man*, Woman*, int*, int) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==  Address 0xbecddf58 is on thread 1's stack
+==5469== 
+==5469== Invalid read of size 4
+==5469==    at 0x8048CA6: SMP_solve(std::istream&, std::ostream&) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048D0D: main (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==  Address 0xbecde728 is on thread 1's stack
+==5469== 
+==5469== Invalid write of size 4
+==5469==    at 0x8048CA9: SMP_solve(std::istream&, std::ostream&) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048D0D: main (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==  Address 0xbeaf1c48 is on thread 1's stack
+==5469== 
+==5469== Invalid write of size 4
+==5469==    at 0x8048CB0: SMP_solve(std::istream&, std::ostream&) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048D0D: main (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==  Address 0xbeaf1c44 is on thread 1's stack
+==5469== 
+==5469== 
+==5469== More than 100 errors detected.  Subsequent errors
+==5469== will still be recorded, but in less detail than before.
+==5469== Invalid write of size 4
+==5469==    at 0x8048CBA: SMP_solve(std::istream&, std::ostream&) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048D0D: main (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==  Address 0xbeaf1c40 is on thread 1's stack
+==5469== 
+==5469== Invalid read of size 4
+==5469==    at 0x8048BAD: SMP_print(int*, std::ostream&, int) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048CC1: SMP_solve(std::istream&, std::ostream&) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048D0D: main (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==  Address 0xbeaf1c48 is on thread 1's stack
+==5469== 
+==5469== Invalid read of size 4
+==5469==    at 0x8048B60: SMP_print(int*, std::ostream&, int) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048CC1: SMP_solve(std::istream&, std::ostream&) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048D0D: main (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==  Address 0xbeaf1c40 is on thread 1's stack
+==5469== 
+==5469== Invalid read of size 4
+==5469==    at 0x8048B63: SMP_print(int*, std::ostream&, int) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048CC1: SMP_solve(std::istream&, std::ostream&) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048D0D: main (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==  Address 0xbecddf58 is on thread 1's stack
+==5469== 
+==5469== Invalid read of size 4
+==5469==    at 0x8048B6F: SMP_print(int*, std::ostream&, int) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048CC1: SMP_solve(std::istream&, std::ostream&) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048D0D: main (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==  Address 0xbeaf1c44 is on thread 1's stack
+==5469== 
 1 240
 2 171
 3 20
@@ -248,6 +978,16 @@
 248 127
 249 225
 250 145
+==5469== Invalid read of size 4
+==5469==    at 0x8048CC2: SMP_solve(std::istream&, std::ostream&) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048D0D: main (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==  Address 0xbecde72c is on thread 1's stack
+==5469== 
+==5469== Invalid write of size 4
+==5469==    at 0x8048CC8: SMP_solve(std::istream&, std::ostream&) (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==    by 0x8048D0D: main (in /v/filer4b/v38q001/robby35u/cs378-smp/RunSMP.c++.app)
+==5469==  Address 0xbecde72c is on thread 1's stack
+==5469== 
 1 57
 2 29
 3 12
@@ -3998,6 +4738,13 @@
 248 235
 249 209
 250 171
+==5469== 
+==5469== More than 10000000 total errors detected.  I'm not reporting any more.
+==5469== Final error counts will be inaccurate.  Go fix your program!
+==5469== Rerun with --error-limit=no to disable this cutoff.  Note
+==5469== that errors may occur in your program without prior warning from
+==5469== Valgrind, because errors are no longer being displayed.
+==5469== 
 1 7
 2 43
 3 244
@@ -12498,3 +13245,20 @@
 248 144
 249 6
 250 80
+==5469== Warning: client switching stacks?  SP change: 0xbeaf1c40 --> 0xbecde730
+==5469==          to suppress, use: --max-stackframe=2018032 or greater
+==5469== 
+==5469== HEAP SUMMARY:
+==5469==     in use at exit: 12,622,880 bytes in 12,506 blocks
+==5469==   total heap usage: 12,506 allocs, 0 frees, 12,622,880 bytes allocated
+==5469== 
+==5469== LEAK SUMMARY:
+==5469==    definitely lost: 12,493,000 bytes in 12,493 blocks
+==5469==    indirectly lost: 0 bytes in 0 blocks
+==5469==      possibly lost: 7,000 bytes in 7 blocks
+==5469==    still reachable: 122,880 bytes in 6 blocks
+==5469==         suppressed: 0 bytes in 0 blocks
+==5469== Rerun with --leak-check=full to see details of leaked memory
+==5469== 
+==5469== For counts of detected and suppressed errors, rerun with: -v
+==5469== ERROR SUMMARY: 10000000 errors from 107 contexts (suppressed: 20 from 7)

@@ -374,7 +374,29 @@ struct TestSMP : CppUnit::TestFixture {
 	CPPUNIT_ASSERT(men[0].getMatch() == 0);
 	CPPUNIT_ASSERT(men[0].getNumber() == 1);}
 	
+//fillWomanArray ---- void fillWomanArray(Woman women[], std::istream& r, int numOfMarriages)
 
+    void test_fillWomanArray_1() {
+	Woman men[500];
+	std::istringstream r("1 3 2\n");
+	fillWomanArray(men, r , 2);
+	CPPUNIT_ASSERT(men[0].getNumber() == 1); }
+
+    void test_fillWomanArray_2 () {
+	Woman men[500];
+	std::istringstream r("1 4 3 1 2\n2 2 1 3 4 \n3 1 3 4 2\n4 4 3 1 2\n");	
+	fillWomanArray(men, r , 4);
+	CPPUNIT_ASSERT(men[0].getNumber() == 1);
+	CPPUNIT_ASSERT(men[1].getNumber() == 2);
+	CPPUNIT_ASSERT(men[2].getNumber() == 3);
+	CPPUNIT_ASSERT(men[3].getNumber() == 4);}
+
+    void test_fillWomanArray_3() {
+	Woman men[500];
+	std::istringstream r("1 1\n");
+	fillWomanArray(men, r , 1);
+	CPPUNIT_ASSERT(men[0].getMatch() == 0);
+	CPPUNIT_ASSERT(men[0].getNumber() == 1);}
   //SMP_eval ----------void SMP_eval (Man men[], Woman women[], int finalMatches[], int numOfMatches ) {
 
    void test_SMP_eval_1() {
@@ -525,6 +547,10 @@ struct TestSMP : CppUnit::TestFixture {
     CPPUNIT_TEST(test_SMP_print_2);
     CPPUNIT_TEST(test_SMP_print_3);
 
+    CPPUNIT_TEST(test_fillWomanArray_1);
+    CPPUNIT_TEST(test_fillWomanArray_2);
+    CPPUNIT_TEST(test_fillWomanArray_3);
+    
     CPPUNIT_TEST(test_fillManArray_1);
     CPPUNIT_TEST(test_fillManArray_2);
     CPPUNIT_TEST(test_fillManArray_3);

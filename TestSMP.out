@@ -1,43 +1,70 @@
-==18482== Memcheck, a memory error detector
-==18482== Copyright (C) 2002-2009, and GNU GPL'd, by Julian Seward et al.
-==18482== Using Valgrind-3.6.0.SVN-Debian and LibVEX; rerun with -h for copyright info
-==18482== Command: TestSMP.c++.app
-==18482== 
+==5780== Memcheck, a memory error detector
+==5780== Copyright (C) 2002-2009, and GNU GPL'd, by Julian Seward et al.
+==5780== Using Valgrind-3.6.0.SVN-Debian and LibVEX; rerun with -h for copyright info
+==5780== Command: TestSMP.c++.app
+==5780== 
 TestSMP.c++
-==18482== Conditional jump or move depends on uninitialised value(s)
-==18482==    at 0x4063B76: CppUnit::Asserter::failIf(bool, CppUnit::Message const&, CppUnit::SourceLine const&) (in /usr/lib/libcppunit-1.12.so.1.0.0)
-==18482==    by 0x8051095: TestSMP::test_propose_3() (in /v/filer4b/v38q001/jgraves/jgraves/CS378/SMP/GitHub/cs378-smp/cs378-smp/TestSMP.c++.app)
-==18482==    by 0x8059CD7: CppUnit::TestCaller<TestSMP>::runTest() (in /v/filer4b/v38q001/jgraves/jgraves/CS378/SMP/GitHub/cs378-smp/cs378-smp/TestSMP.c++.app)
-==18482==    by 0x40737B8: CppUnit::TestCaseMethodFunctor::operator()() const (in /usr/lib/libcppunit-1.12.so.1.0.0)
-==18482==    by 0x4066527: CppUnit::DefaultProtector::protect(CppUnit::Functor const&, CppUnit::ProtectorContext const&) (in /usr/lib/libcppunit-1.12.so.1.0.0)
-==18482==    by 0x406FC92: CppUnit::ProtectorChain::ProtectFunctor::operator()() const (in /usr/lib/libcppunit-1.12.so.1.0.0)
-==18482==    by 0x406F754: CppUnit::ProtectorChain::protect(CppUnit::Functor const&, CppUnit::ProtectorContext const&) (in /usr/lib/libcppunit-1.12.so.1.0.0)
-==18482==    by 0x407AB66: CppUnit::TestResult::protect(CppUnit::Functor const&, CppUnit::Test*, std::string const&) (in /usr/lib/libcppunit-1.12.so.1.0.0)
-==18482==    by 0x4073559: CppUnit::TestCase::run(CppUnit::TestResult*) (in /usr/lib/libcppunit-1.12.so.1.0.0)
-==18482==    by 0x4073D55: CppUnit::TestComposite::doRunChildTests(CppUnit::TestResult*) (in /usr/lib/libcppunit-1.12.so.1.0.0)
-==18482==    by 0x4073C79: CppUnit::TestComposite::run(CppUnit::TestResult*) (in /usr/lib/libcppunit-1.12.so.1.0.0)
-==18482==    by 0x407CCCB: CppUnit::TestRunner::WrappingSuite::run(CppUnit::TestResult*) (in /usr/lib/libcppunit-1.12.so.1.0.0)
-==18482== 
-.....................................
+==5780== Conditional jump or move depends on uninitialised value(s)
+==5780==    at 0x4068B76: CppUnit::Asserter::failIf(bool, CppUnit::Message const&, CppUnit::SourceLine const&) (in /usr/lib/libcppunit-1.12.so.1.0.0)
+==5780==    by 0x8051095: TestSMP::test_propose_3() (in /v/filer4b/v38q001/robby35u/cs378-smp/TestSMP.c++.app)
+==5780==    by 0x805B16F: CppUnit::TestCaller<TestSMP>::runTest() (in /v/filer4b/v38q001/robby35u/cs378-smp/TestSMP.c++.app)
+==5780==    by 0x40787B8: CppUnit::TestCaseMethodFunctor::operator()() const (in /usr/lib/libcppunit-1.12.so.1.0.0)
+==5780==    by 0x406B527: CppUnit::DefaultProtector::protect(CppUnit::Functor const&, CppUnit::ProtectorContext const&) (in /usr/lib/libcppunit-1.12.so.1.0.0)
+==5780==    by 0x4074C92: CppUnit::ProtectorChain::ProtectFunctor::operator()() const (in /usr/lib/libcppunit-1.12.so.1.0.0)
+==5780==    by 0x4074754: CppUnit::ProtectorChain::protect(CppUnit::Functor const&, CppUnit::ProtectorContext const&) (in /usr/lib/libcppunit-1.12.so.1.0.0)
+==5780==    by 0x407FB66: CppUnit::TestResult::protect(CppUnit::Functor const&, CppUnit::Test*, std::string const&) (in /usr/lib/libcppunit-1.12.so.1.0.0)
+==5780==    by 0x4078559: CppUnit::TestCase::run(CppUnit::TestResult*) (in /usr/lib/libcppunit-1.12.so.1.0.0)
+==5780==    by 0x4078D55: CppUnit::TestComposite::doRunChildTests(CppUnit::TestResult*) (in /usr/lib/libcppunit-1.12.so.1.0.0)
+==5780==    by 0x4078C79: CppUnit::TestComposite::run(CppUnit::TestResult*) (in /usr/lib/libcppunit-1.12.so.1.0.0)
+==5780==    by 0x4081CCB: CppUnit::TestRunner::WrappingSuite::run(CppUnit::TestResult*) (in /usr/lib/libcppunit-1.12.so.1.0.0)
+==5780== 
+==5780== Invalid write of size 4
+==5780==    at 0x804A89C: Woman::Woman(int*, int, int) (in /v/filer4b/v38q001/robby35u/cs378-smp/TestSMP.c++.app)
+==5780==    by 0x804A091: fillWomanArray(Woman*, std::istream&, int) (in /v/filer4b/v38q001/robby35u/cs378-smp/TestSMP.c++.app)
+==5780==    by 0x8053EB3: TestSMP::test_fillWomanArray_1() (in /v/filer4b/v38q001/robby35u/cs378-smp/TestSMP.c++.app)
+==5780==    by 0x805B16F: CppUnit::TestCaller<TestSMP>::runTest() (in /v/filer4b/v38q001/robby35u/cs378-smp/TestSMP.c++.app)
+==5780==    by 0x40787B8: CppUnit::TestCaseMethodFunctor::operator()() const (in /usr/lib/libcppunit-1.12.so.1.0.0)
+==5780==    by 0x406B527: CppUnit::DefaultProtector::protect(CppUnit::Functor const&, CppUnit::ProtectorContext const&) (in /usr/lib/libcppunit-1.12.so.1.0.0)
+==5780==    by 0x4074C92: CppUnit::ProtectorChain::ProtectFunctor::operator()() const (in /usr/lib/libcppunit-1.12.so.1.0.0)
+==5780==    by 0x4074754: CppUnit::ProtectorChain::protect(CppUnit::Functor const&, CppUnit::ProtectorContext const&) (in /usr/lib/libcppunit-1.12.so.1.0.0)
+==5780==    by 0x407FB66: CppUnit::TestResult::protect(CppUnit::Functor const&, CppUnit::Test*, std::string const&) (in /usr/lib/libcppunit-1.12.so.1.0.0)
+==5780==    by 0x4078559: CppUnit::TestCase::run(CppUnit::TestResult*) (in /usr/lib/libcppunit-1.12.so.1.0.0)
+==5780==    by 0x4078D55: CppUnit::TestComposite::doRunChildTests(CppUnit::TestResult*) (in /usr/lib/libcppunit-1.12.so.1.0.0)
+==5780==    by 0x4078C79: CppUnit::TestComposite::run(CppUnit::TestResult*) (in /usr/lib/libcppunit-1.12.so.1.0.0)
+==5780==  Address 0x436e080 is 0 bytes after a block of size 8 alloc'd
+==5780==    at 0x402532E: operator new[](unsigned int) (vg_replace_malloc.c:299)
+==5780==    by 0x804A860: Woman::Woman(int*, int, int) (in /v/filer4b/v38q001/robby35u/cs378-smp/TestSMP.c++.app)
+==5780==    by 0x804A091: fillWomanArray(Woman*, std::istream&, int) (in /v/filer4b/v38q001/robby35u/cs378-smp/TestSMP.c++.app)
+==5780==    by 0x8053EB3: TestSMP::test_fillWomanArray_1() (in /v/filer4b/v38q001/robby35u/cs378-smp/TestSMP.c++.app)
+==5780==    by 0x805B16F: CppUnit::TestCaller<TestSMP>::runTest() (in /v/filer4b/v38q001/robby35u/cs378-smp/TestSMP.c++.app)
+==5780==    by 0x40787B8: CppUnit::TestCaseMethodFunctor::operator()() const (in /usr/lib/libcppunit-1.12.so.1.0.0)
+==5780==    by 0x406B527: CppUnit::DefaultProtector::protect(CppUnit::Functor const&, CppUnit::ProtectorContext const&) (in /usr/lib/libcppunit-1.12.so.1.0.0)
+==5780==    by 0x4074C92: CppUnit::ProtectorChain::ProtectFunctor::operator()() const (in /usr/lib/libcppunit-1.12.so.1.0.0)
+==5780==    by 0x4074754: CppUnit::ProtectorChain::protect(CppUnit::Functor const&, CppUnit::ProtectorContext const&) (in /usr/lib/libcppunit-1.12.so.1.0.0)
+==5780==    by 0x407FB66: CppUnit::TestResult::protect(CppUnit::Functor const&, CppUnit::Test*, std::string const&) (in /usr/lib/libcppunit-1.12.so.1.0.0)
+==5780==    by 0x4078559: CppUnit::TestCase::run(CppUnit::TestResult*) (in /usr/lib/libcppunit-1.12.so.1.0.0)
+==5780==    by 0x4078D55: CppUnit::TestComposite::doRunChildTests(CppUnit::TestResult*) (in /usr/lib/libcppunit-1.12.so.1.0.0)
+==5780== 
+........................................
 
 
-OK (37 tests)
+OK (40 tests)
 
 
 Done.
-==18482== 
-==18482== HEAP SUMMARY:
-==18482==     in use at exit: 123,264 bytes in 24 blocks
-==18482==   total heap usage: 1,148 allocs, 1,124 frees, 252,179 bytes allocated
-==18482== 
-==18482== LEAK SUMMARY:
-==18482==    definitely lost: 384 bytes in 18 blocks
-==18482==    indirectly lost: 0 bytes in 0 blocks
-==18482==      possibly lost: 0 bytes in 0 blocks
-==18482==    still reachable: 122,880 bytes in 6 blocks
-==18482==         suppressed: 0 bytes in 0 blocks
-==18482== Rerun with --leak-check=full to see details of leaked memory
-==18482== 
-==18482== For counts of detected and suppressed errors, rerun with: -v
-==18482== Use --track-origins=yes to see where uninitialised values come from
-==18482== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 22 from 7)
+==5780== 
+==5780== HEAP SUMMARY:
+==5780==     in use at exit: 123,348 bytes in 31 blocks
+==5780==   total heap usage: 1,251 allocs, 1,220 frees, 262,744 bytes allocated
+==5780== 
+==5780== LEAK SUMMARY:
+==5780==    definitely lost: 468 bytes in 25 blocks
+==5780==    indirectly lost: 0 bytes in 0 blocks
+==5780==      possibly lost: 0 bytes in 0 blocks
+==5780==    still reachable: 122,880 bytes in 6 blocks
+==5780==         suppressed: 0 bytes in 0 blocks
+==5780== Rerun with --leak-check=full to see details of leaked memory
+==5780== 
+==5780== For counts of detected and suppressed errors, rerun with: -v
+==5780== Use --track-origins=yes to see where uninitialised values come from
+==5780== ERROR SUMMARY: 3 errors from 2 contexts (suppressed: 22 from 7)
