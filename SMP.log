@@ -1,0 +1,97 @@
+commit 6aebea401ed122a82a0e99ffb6f90b323cf8ac23
+Author: Robert Reed <callmeelasinthe@gmail.com>
+Date:   Sat Jun 16 19:52:46 2012 -0500
+
+    Got sphere to accept our program, and double checked big O constraints
+
+commit 6d78c24ce28ab1e2c30d8cf17256f26a627918fc
+Merge: d7fa4e7 aa70492
+Author: Robert Reed <callmeelasinthe@gmail.com>
+Date:   Sat Jun 16 18:42:35 2012 -0500
+
+    Merged work from partner working on different machine. #18
+
+commit d7fa4e75916fdf0d6ccf30685ad33fbc4243cd4b
+Author: Robert Reed <callmeelasinthe@gmail.com>
+Date:   Sat Jun 16 18:37:25 2012 -0500
+
+    Completed comments and styling. #7
+
+commit aa70492472d8df6dd8bbff3489ea75658a5908e7
+Author: Jordan Graves <jgraves8205@aol.com>
+Date:   Sat Jun 16 18:24:03 2012 -0500
+
+    final version of SMP.h and RunSMP.c++; Acceptance tests: in and out
+
+commit 48f43d35bc596401047c22b55c998767193186a6
+Merge: 7e15693 a57a8b3
+Author: Jordan Graves <jgraves8205@aol.com>
+Date:   Sat Jun 16 16:05:49 2012 -0500
+
+    Still preparing for merge
+
+commit 7e156937d8a0cef7b64dc242c990ff8517608f95
+Author: Jordan Graves <jgraves8205@aol.com>
+Date:   Sat Jun 16 15:50:06 2012 -0500
+
+    Preparing for merge with master
+
+commit a57a8b3b1d4ef2d8823fcdbb47bb8810490835df
+Author: Robert Reed <callmeelasinthe@gmail.com>
+Date:   Sat Jun 16 15:29:50 2012 -0500
+
+    Fixed bug in woman's choice algorithm. #16
+
+commit ea1dd4051bc12fc66aca16ceb4f3ed4383cb257e
+Author: Jordan Graves <jgraves8205@aol.com>
+Date:   Fri Jun 15 18:17:01 2012 -0500
+
+    wrote tests for: eval, print, fillManArray (eval works for simple 4 marriage case but fails for 7 marriage case)
+
+commit c9c5b913e35b639ab8749651ad4eea837d3b7a7f
+Author: Jordan Graves <jgraves8205@aol.com>
+Date:   Thu Jun 14 22:37:04 2012 -0500
+
+    Wrote main algarithm: doesn't work. Need more tests. #14
+
+commit 15d5036d6ea776300323b952140b94cb474fd9c3
+Author: Jordan Graves <jgraves8205@aol.com>
+Date:   Thu Jun 14 21:06:04 2012 -0500
+
+    Wrote input parsing functions. These methods need to pass unit tests. #12
+
+commit 6df5102b460064562922be26caf6a08c3553659b
+Author: Robert Reed <callmeelasinthe@gmail.com>
+Date:   Wed Jun 13 19:27:04 2012 -0500
+
+    Double Checking commit
+
+commit b42e43072480cb94ba034ae94f97f0cb117a3a15
+Author: Robert Reed <callmeelasinthe@gmail.com>
+Date:   Wed Jun 13 19:09:07 2012 -0500
+
+    Wrote Woman class and added unit tests. Issues # 11
+
+commit 9f5ec948b72e8babebe5cfe10734fd566e9d97a0
+Author: Robert Reed <callmeelasinthe@gmail.com>
+Date:   Wed Jun 13 17:42:56 2012 -0500
+
+    Wrote Man class and added unit tests to TestSMP.h, Issues #10
+
+commit decdfa31471307e56b080f7ef5dd70f1da149f92
+Author: Jordan Graves <jgraves8205@aol.com>
+Date:   Tue Jun 12 21:57:47 2012 -0500
+
+    small changes to SMP.h (Man class)
+
+commit 216ab899b897d731ef03e8d846600de6456e38db
+Author: Jordan Graves <jgraves8205@aol.com>
+Date:   Tue Jun 12 21:26:37 2012 -0500
+
+    wrote and tested person class - Issue #9
+
+commit 893dc6202623a783c95ddd7ec13f9016d915e7b3
+Author: robby35us <callmeelasinthe@gmail.com>
+Date:   Tue Jun 12 15:54:14 2012 -0700
+
+    Initial commit
