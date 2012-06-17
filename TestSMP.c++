@@ -42,15 +42,20 @@ struct TestSMP : CppUnit::TestFixture {
 
     void test_construct_1 () {
         int a1[2] = {1, 2};
-        int a2[2] = {2, 1};
         Person Pat = Person(a1, 1);
-        Person Chris  = Person(a2, 2);
-        Person Jordan = Person(a2, 2);
-        Person Sam = Person(a1, 1);}
+	CPPUNIT_ASSERT(Pat.getNumber() == 1);}
 
     void test_construct_2 () {
         int a1[2] = {1, 2};
-        Person Sam = Person(a1, 1);}
+        Person Sam = Person(a1, 3);
+	Person Matt = Person(a1, 2);
+	CPPUNIT_ASSERT(Sam.getNumber() != Matt.getNumber());}
+
+    void test_construct_3 () {
+	int a1[1] = {};
+	Person Sam = Person(a1, 250);
+	CPPUNIT_ASSERT(Sam.getNumber() == 250);
+	CPPUNIT_ASSERT(Sam.getMatch() == 0);} 
 
     // ----
     // Person.getNumber
@@ -135,6 +140,10 @@ struct TestSMP : CppUnit::TestFixture {
         Pat.engage(Chris.getNumber());
         Chris.engage(Pat.getNumber());
         int m = Pat.getMatch();
+        Man Matt = Man(a2, 1);
+        CPPUNIT_ASSERT(Matt.propose() == 2);
+        Man Dudeman = Man(a2, 2);
+        CPPUNIT_ASSERT(Dudeman.propose() != 1);
         CPPUNIT_ASSERT(Pat.isFree() == false);
         CPPUNIT_ASSERT(m == Chris.getNumber());}
 
@@ -239,14 +248,19 @@ struct TestSMP : CppUnit::TestFixture {
        Man Dudeman = Man(a2, 2);
        CPPUNIT_ASSERT(Dudeman.propose() != 1); }
        
-//    void test_propose_3() {
-//      int a[] = {1};
-//      Man OtherDudeMan = Man(a, 1);
-//      try {
-//	 OtherDudeMan.propose();
-//         OtherDudeMan.propose();
-//	 CPPUNIT_ASSERT(false);}
-//      catch(){}}
+    void test_propose_3() {
+       int a2[1] = {2};
+       Man Matt = Man(a2, 1);
+       CPPUNIT_ASSERT(Matt.propose() == 2);
+       CPPUNIT_ASSERT(Matt.propose() == 0); }
+
+
+
+
+   //---------
+   //Woman Constructor
+   //-----------
+
 
     void test_WomanConstruct_1() {
        int a1[2] = {1, 2};
@@ -329,6 +343,12 @@ struct TestSMP : CppUnit::TestFixture {
 	SMP_print(finalMatches, w, 4);
 	CPPUNIT_ASSERT(w.str() == "1 3\n2 2\n3 1\n4 4\n");}
 
+   void test_SMP_print_3() {
+	int finalMatches[4] = {0 ,0 ,0, 0};
+ 	std::ostringstream w;
+	SMP_print(finalMatches, w, 4);
+	CPPUNIT_ASSERT(w.str() == "1 0\n2 0\n3 0\n4 0\n"); } 
+
 
 //fillManArray ---- void fillManArray(Man men[], std::istream& r, int numOfMarriages)
 
@@ -345,14 +365,29 @@ struct TestSMP : CppUnit::TestFixture {
 	CPPUNIT_ASSERT(men[0].getNumber() == 1);
 	CPPUNIT_ASSERT(men[1].getNumber() == 2);
 	CPPUNIT_ASSERT(men[2].getNumber() == 3);
-	CPPUNIT_ASSERT(men[3].getNumber() == 4);
-}
-	
+	CPPUNIT_ASSERT(men[3].getNumber() == 4);}
+
+    void test_fillManArray_3() {
+	Man men[500];
+	std::istringstream r("1 1\n");
+	fillManArray(men, r , 1);
+	CPPUNIT_ASSERT(men[0].getMatch() == 0);
+	CPPUNIT_ASSERT(men[0].getNumber() == 1);}
 	
 
   //SMP_eval ----------void SMP_eval (Man men[], Woman women[], int finalMatches[], int numOfMatches ) {
 
    void test_SMP_eval_1() {
+		int a1[1] =  {1};		
+		Man m = Man(a1, 1);
+		Woman w = Woman(a1, 1, 1); 
+		Man men[1] = {m};
+		Woman women[1] = {w};
+		int finalMatches[500];
+		SMP_eval(men, women, finalMatches, 1);
+		CPPUNIT_ASSERT(finalMatches[0] == 1); }
+
+    void test_SMP_eval_2() {
 		//woman prefs
 	int wprefs1[4] = {4,3,1,2};
         int wprefs2[4] = {2,1,3,4};
@@ -387,7 +422,7 @@ struct TestSMP : CppUnit::TestFixture {
 	CPPUNIT_ASSERT(finalMatches[2] == 1);
 	CPPUNIT_ASSERT(finalMatches[3] == 4);  }
 
-    void test_SMP_eval_2() {
+    void test_SMP_eval_3() {
 		//woman prefs
 	int wprefs1[7] = {3,4,2,1,6,7,5};
         int wprefs2[7] = {6,4,2,3,5,1,7};
@@ -437,9 +472,10 @@ struct TestSMP : CppUnit::TestFixture {
 	CPPUNIT_ASSERT(finalMatches[4] == 7);
 	CPPUNIT_ASSERT(finalMatches[5] == 6);
 	CPPUNIT_ASSERT(finalMatches[6] == 2); 
-	cout << finalMatches[6] << endl;
 }
    
+
+	
 
 
 
@@ -449,6 +485,8 @@ struct TestSMP : CppUnit::TestFixture {
 
     CPPUNIT_TEST_SUITE(TestSMP);
     CPPUNIT_TEST(test_construct_1);
+    CPPUNIT_TEST(test_construct_2);
+    CPPUNIT_TEST(test_construct_3);
 
     CPPUNIT_TEST(test_number_1);
     CPPUNIT_TEST(test_number_2);
@@ -473,7 +511,7 @@ struct TestSMP : CppUnit::TestFixture {
     
     CPPUNIT_TEST(test_propose_1);
     CPPUNIT_TEST(test_propose_2);
-//    CPPUNIT_TEST(test_propose_3);
+    CPPUNIT_TEST(test_propose_3);
 
     CPPUNIT_TEST(test_wct_1);
     CPPUNIT_TEST(test_wct_2);
@@ -485,12 +523,15 @@ struct TestSMP : CppUnit::TestFixture {
 
     CPPUNIT_TEST(test_SMP_print_1);
     CPPUNIT_TEST(test_SMP_print_2);
+    CPPUNIT_TEST(test_SMP_print_3);
 
     CPPUNIT_TEST(test_fillManArray_1);
     CPPUNIT_TEST(test_fillManArray_2);
+    CPPUNIT_TEST(test_fillManArray_3);
 
     CPPUNIT_TEST(test_SMP_eval_1); 
     CPPUNIT_TEST(test_SMP_eval_2); 
+    CPPUNIT_TEST(test_SMP_eval_3);
   
 
     CPPUNIT_TEST_SUITE_END();};
