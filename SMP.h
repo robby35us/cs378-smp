@@ -4,6 +4,7 @@
 // -----------------------------
 
 #include <iostream> 
+#include <cassert>
 using namespace std;
 
 // ------------
@@ -48,6 +49,7 @@ public: Person() {}
     *@param numberOfPerson Is an identifying integer.*/
 public: Person(int prefsList[], int numberOfPerson) 
 {
+assert(numberOfPerson > 0 && numberOfPerson < 500);
 is_free = true;
 for(int i = 0; i < 500; i++)
 	prefs[i] = prefsList[i]; // prefsList[0]
@@ -70,7 +72,8 @@ public: int getMatch() {return match; }
     /** Engages the person to the person with the number given.
     * @param matchTo The number of their betrothed. */
 public: void engage(int matchTo) // matches person to matchTo 
-{ match = matchTo;
+{ assert(matchTo > 0 && matchTo < 500);
+  match = matchTo;
   is_free = false; }
 
     // ----------------
@@ -126,6 +129,7 @@ public: Man(int prefsList[], int numberOfPerson)
     * based on his preferences. */
 public: int propose() {
 	int i = next_woman;
+	assert(next_woman > 0 && next_woman < 500);
 	++next_woman;
 	 return prefs[i]; }
 };
@@ -163,10 +167,10 @@ class Woman : public Person {
     * @param numberOfWoman the womans' identifying number*/
   public: Woman(int prefsList[], int length, int numberOfPerson) 
    : Person(prefsList, numberOfPerson) {
-	  
       revPrefs = new int[length];
       for(int pref = 0; pref < length; ++pref) {
          int manNum = prefs[pref];
+	 assert(manNum > 0 && manNum < 500);
 	 revPrefs[manNum - 1] = pref + 1;}
    }
  
@@ -178,6 +182,7 @@ class Woman : public Person {
     *@param possMatch new man's identifying number
     *@return true for yes and false for no. */
   public: bool wants_change_to(int possMatch) {
+    assert(possMatch > 0 && possMatch < 500);
     if (revPrefs[match - 1] <= revPrefs[possMatch - 1])
       return false;
     else
@@ -191,6 +196,7 @@ class Woman : public Person {
     * @param numberOfMan The new man's identifying number.
     * @return true for yes and false for no. */
   public: bool acceptProposal(int numberOfMan) {
+    assert(numberOfMan > 0 && numberOfMan < 500);
      if(isFree() || wants_change_to(numberOfMan)) {
         engage(numberOfMan);
 	    return 1;}
@@ -244,6 +250,7 @@ void fillWomanArray(Woman women[], std::istream& r, int numOfMarriages) {
 * 	the man's number (off by one) and the value at that index, the woman he's engaged to.
 * @param numOfMatches The number of man/woman/pairs. */
 void SMP_eval (Man men[], Woman women[], int finalMatches[], int numOfMatches ) {
+	assert(numOfMatches <= 500);
 	bool disengaged = false;
 	Man* beg = men;
 	Man* end = men + numOfMatches;
@@ -276,6 +283,7 @@ void SMP_eval (Man men[], Woman women[], int finalMatches[], int numOfMatches ) 
 * @param w a std::ostrearm
 * @param numOfMatches the size of final*/
 void SMP_print(int finalMatches[], std::ostream& w, int numOfMatches) {
+	assert(numOfMatches > 0 && numOfMatches < 500);
 	for(int i = 0; i < numOfMatches; ++i) 
 		w << (i + 1) << " " << finalMatches[i] << endl;
 }
